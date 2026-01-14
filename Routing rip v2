@@ -1,0 +1,24 @@
+IP Address
+R1–R2 : 10.10.10.0/30
+R1 : 192.168.1.0/24
+R2 : 192.168.2.0/24
+
+Router 1
+Router> enable
+Router# configure terminal
+Router(config)# router rip
+Router(config-router)# version 2
+Router(config-router)# no auto-summary
+Router(config-router)# network 192.168.1.0
+Router(config-router)# network 10.10.10.0
+Router(config-router)# exit
+
+Router 2
+Router> enable
+Router# configure terminal
+Router(config)# router rip
+Router(config-router)# version 2
+Router(config-router)# no auto-summary
+Router(config-router)# network 192.168.2.0
+Router(config-router)# network 10.10.10.0
+Router(config-router)# exit
